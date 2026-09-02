@@ -1,0 +1,70 @@
+:root {
+  /* Fonts */
+  --font-display: 'Fredoka', 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-ui: 'Outfit', 'Fredoka', system-ui, -apple-system, sans-serif;
+
+  /* Arcade Color Tokens matching Reference Screenshots */
+  --color-red: #FF2238;
+  --color-red-glow: #FF4D63;
+  --color-red-dark: #9E0A1B;
+  --color-red-border: #FF7083;
+
+  --color-blue: #0088FF;
+  --color-blue-glow: #38A9FF;
+  --color-blue-dark: #004A9E;
+  --color-blue-border: #6BC1FF;
+
+  --color-green: #14C834;
+  --color-green-glow: #34E254;
+  --color-green-dark: #0C6F19;
+  --color-green-border: #6EEB85;
+
+  --color-yellow: #FFB800;
+  --color-yellow-glow: #FFCC22;
+  --color-yellow-dark: #A36800;
+  --color-yellow-border: #FFE266;
+
+  --color-purple: #9D38F0;
+  --color-purple-glow: #B762FF;
+  --color-purple-dark: #581694;
+  --color-purple-border: #CF8CFF;
+
+  --color-orange: #FF6600;
+  --color-orange-glow: #FF8533;
+  --color-orange-dark: #993D00;
+
+  /* Dark Space Background Tokens */
+  --bg-deep-space: #060814;
+  --bg-radial-center: #101633;
+  --bg-card: rgba(14, 18, 40, 0.88);
+  --bg-card-secondary: rgba(20, 26, 56, 0.75);
+  --border-card-glass: rgba(110, 140, 255, 0.22);
+  --border-card-glow: rgba(130, 90, 255, 0.45);
+
+  /* Glossy 3D Button Shadows */
+  --shadow-btn-yellow: 0 8px 0 #9E6500, 0 12px 24px rgba(255, 184, 0, 0.4);
+  --shadow-btn-yellow-active: 0 2px 0 #9E6500, 0 4px 12px rgba(255, 184, 0, 0.3);
+
+  --shadow-btn-purple: 0 6px 0 #521588, 0 10px 20px rgba(157, 56, 240, 0.4);
+  --shadow-btn-purple-active: 0 2px 0 #521588, 0 4px 10px rgba(157, 56, 240, 0.3);
+
+  --shadow-btn-blue: 0 6px 0 #004594, 0 10px 20px rgba(0, 136, 255, 0.4);
+  --shadow-btn-blue-active: 0 2px 0 #004594, 0 4px 10px rgba(0, 136, 255, 0.3);
+
+  --shadow-btn-green: 0 6px 0 #0C6116, 0 10px 20px rgba(20, 200, 52, 0.4);
+  --shadow-btn-green-active: 0 2px 0 #0C6116, 0 4px 10px rgba(20, 200, 52, 0.3);
+
+  --shadow-btn-red: 0 6px 0 #870C1A, 0 10px 20px rgba(255, 34, 56, 0.4);
+  --shadow-btn-red-active: 0 2px 0 #870C1A, 0 4px 10px rgba(255, 34, 56, 0.3);
+
+  /* Card Radius */
+  --radius-card-lg: 28px;
+  --radius-card-md: 20px;
+  --radius-card-sm: 14px;
+  --radius-btn-pill: 9999px;
+  --radius-btn-arcade: 18px;
+
+  /* Transitions */
+  --transition-snappy: 0.14s cubic-bezier(0.2, 0, 0, 1);
+  --transition-smooth: 0.28s cubic-bezier(0.25, 1, 0.5, 1);
+}

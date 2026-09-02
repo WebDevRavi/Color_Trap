@@ -1,0 +1,663 @@
+/* ==========================================================================
+   COLOR TRAP BRAND LOGO COMPONENT
+   ========================================================================== */
+.brand-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.brand-splatters-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Splash backdrop behind logo */
+.brand-splash-fx {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 145%;
+  height: 145%;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  line-height: 0.92;
+}
+
+/* 3D Bubble "COLOR" letters */
+.brand-color-row {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7vw, 4.8rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 1px;
+  filter: drop-shadow(0 6px 0 #070914) drop-shadow(0 10px 14px rgba(0,0,0,0.7));
+}
+
+.letter-c { color: #FF263B; text-shadow: 0 2px 0 #FFA6B0 inset; }
+.letter-o1 { color: #0088FF; text-shadow: 0 2px 0 #85C8FF inset; }
+.letter-l { color: #FFBC00; text-shadow: 0 2px 0 #FFE485 inset; }
+.letter-o2 { color: #1CCC34; text-shadow: 0 2px 0 #8AFF99 inset; }
+.letter-r { color: #A23DF5; text-shadow: 0 2px 0 #E2B3FF inset; }
+
+/* 3D Silver/White "TRAP" letters with Warning Triangle in "A" */
+.brand-trap-row {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 8vw, 5.4rem);
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  text-shadow: 
+    0 -2px 0 #FFFFFF,
+    0 2px 0 #B0B9D6,
+    0 4px 0 #7A85A8,
+    0 6px 0 #3D445C,
+    0 8px 16px rgba(0, 0, 0, 0.9);
+  margin-top: -6px;
+}
+
+.trap-letter-a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trap-warning-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -24%);
+  width: 0.38em;
+  height: 0.38em;
+}
+
+/* Slogan "DON'T READ IT. SEE IT." */
+.brand-tagline {
+  font-family: var(--font-ui);
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  position: relative;
+  z-index: 2;
+  background: rgba(8, 10, 22, 0.7);
+  padding: 4px 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.brand-tagline .part-white {
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.brand-tagline .part-yellow {
+  color: #FFC400;
+  font-style: italic;
+  text-shadow: 0 0 10px rgba(255, 196, 0, 0.7);
+}
+
+/* Compact version for Gameplay and Results header */
+.brand-logo-compact .brand-color-row {
+  font-size: 2.2rem;
+}
+.brand-logo-compact .brand-trap-row {
+  font-size: 2.5rem;
+  margin-top: -4px;
+}
+.brand-logo-compact .brand-tagline {
+  font-size: 0.85rem;
+  padding: 2px 12px;
+}
+
+/* Difficulty Badges */
+.hud-difficulty-badge {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #FFDE59;
+  background: rgba(255, 184, 0, 0.15);
+  border: 1px solid rgba(255, 184, 0, 0.4);
+  border-radius: var(--radius-btn-pill);
+  padding: 2px 10px;
+  margin-top: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.badge-difficulty-select {
+  background: rgba(14, 18, 40, 0.85);
+  border: 2px solid rgba(255, 184, 0, 0.4);
+  border-radius: var(--radius-btn-pill);
+  padding: 6px 14px;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: all var(--transition-snappy);
+}
+.badge-difficulty-select:hover {
+  border-color: #FFDE59;
+  transform: scale(1.04);
+}
+.badge-difficulty-select .val-diff {
+  color: #FFC400;
+  font-weight: 800;
+}
+
+/* Tutorial Pointer Overlay */
+.tutorial-guide-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  animation: tutorialBounce 1.2s infinite ease-in-out;
+}
+
+.tutorial-hand-bounce {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 4px 12px rgba(255, 204, 0, 0.8));
+}
+
+.tutorial-tip-pill {
+  background: rgba(8, 12, 30, 0.92);
+  border: 2px solid #FFC400;
+  border-radius: var(--radius-btn-pill);
+  padding: 6px 16px;
+  color: #FFF;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 196, 0, 0.4);
+  white-space: nowrap;
+}
+
+@keyframes tutorialBounce {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-10px); }
+}
+
+/* ==========================================================================
+   3D GLOSSY ARCADE BUTTONS
+   ========================================================================== */
+.btn-arcade {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: transform var(--transition-snappy), box-shadow var(--transition-snappy), filter var(--transition-snappy);
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+/* Glossy top highlight overlay */
+.btn-arcade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.08) 90%, transparent 100%);
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  pointer-events: none;
+}
+
+/* Subtly curved inner border */
+.btn-arcade::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.btn-arcade:hover {
+  filter: brightness(1.08);
+}
+
+.btn-arcade:active {
+  transform: translateY(4px);
+}
+
+/* Yellow Primary Action (PLAY button) */
+.btn-primary-yellow {
+  background: linear-gradient(180deg, #FFE033 0%, #FFB800 55%, #E69D00 100%);
+  color: #1A1202;
+  box-shadow: var(--shadow-btn-yellow);
+  border-radius: var(--radius-btn-pill);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  padding: 16px 56px;
+  min-width: 320px;
+  border: 3px solid #FFF38A;
+}
+.btn-primary-yellow:active {
+  box-shadow: var(--shadow-btn-yellow-active);
+}
+
+/* Purple Button (HOW TO PLAY / REPLAY) */
+.btn-purple {
+  background: linear-gradient(180deg, #B24EFB 0%, #8E25E6 60%, #6815B0 100%);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-btn-purple);
+  border-radius: var(--radius-btn-pill);
+  font-size: 1.15rem;
+  padding: 14px 28px;
+  border: 2px solid #D694FF;
+}
+.btn-purple:active {
+  box-shadow: var(--shadow-btn-purple-active);
+}
+
+/* Blue Button (ACHIEVEMENTS / STATS) */
+.btn-blue {
+  background: linear-gradient(180deg, #2EB0FF 0%, #0088FF 60%, #0060BA 100%);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-btn-blue);
+  border-radius: var(--radius-btn-pill);
+  font-size: 1.15rem;
+  padding: 14px 28px;
+  border: 2px solid #7DCEFF;
+}
+.btn-blue:active {
+  box-shadow: var(--shadow-btn-blue-active);
+}
+
+/* Green Button (PLAY AGAIN HARDER) */
+.btn-green {
+  background: linear-gradient(180deg, #3EEB5F 0%, #15C434 60%, #0D8F24 100%);
+  color: #042609;
+  box-shadow: var(--shadow-btn-green);
+  border-radius: var(--radius-btn-pill);
+  font-size: 1.15rem;
+  padding: 14px 28px;
+  border: 2px solid #99FFAE;
+}
+.btn-green:active {
+  box-shadow: var(--shadow-btn-green-active);
+}
+
+/* Circular Glossy Icon Buttons (Audio, Settings, Shop) */
+.btn-circle-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #1C244A 0%, #101533 100%);
+  border: 2px solid rgba(110, 140, 255, 0.4);
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transition: transform var(--transition-snappy), border-color var(--transition-snappy);
+}
+.btn-circle-icon:hover {
+  border-color: rgba(255, 204, 34, 0.8);
+  transform: scale(1.05);
+}
+.btn-circle-icon:active {
+  transform: scale(0.95);
+}
+
+/* Back Button */
+.btn-back {
+  background: rgba(16, 22, 50, 0.85);
+  border: 2px solid rgba(110, 140, 255, 0.35);
+  border-radius: var(--radius-btn-pill);
+  padding: 8px 18px;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: all var(--transition-snappy);
+}
+.btn-back:hover {
+  background: rgba(28, 38, 86, 0.9);
+  border-color: #FFCC22;
+}
+
+/* ==========================================================================
+   GLASSMORPHIC CARDS & BADGES
+   ========================================================================== */
+.card-arcade {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid var(--border-card-glass);
+  border-radius: var(--radius-card-lg);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+/* Best Score Top Badge on Home Screen */
+.badge-best-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(14, 18, 40, 0.85);
+  border: 2px solid rgba(255, 184, 0, 0.35);
+  border-radius: 18px;
+  padding: 8px 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 184, 0, 0.15);
+}
+.badge-best-score .label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #FFE082;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+}
+.badge-best-score .value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FFC400;
+  text-shadow: 0 0 10px rgba(255, 196, 0, 0.5);
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Reward Points Top Badge on Home Screen */
+.badge-reward-points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(14, 18, 40, 0.85);
+  border: 2px solid rgba(0, 200, 255, 0.35);
+  border-radius: 18px;
+  padding: 8px 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 200, 255, 0.15);
+}
+.badge-reward-points .label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #8CE8FF;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+}
+.badge-reward-points .value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00C8FF;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Keyboard hint bar */
+.keyboard-hint-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 14, 32, 0.85);
+  border: 1px solid rgba(110, 140, 255, 0.25);
+  border-radius: var(--radius-btn-pill);
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+.key-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #FFFFFF;
+}
+.key-badge-1 { background: var(--color-red); }
+.key-badge-2 { background: var(--color-blue); }
+.key-badge-3 { background: var(--color-green); }
+.key-badge-4 { background: var(--color-yellow); color: #1A1202; }
+
+/* Daily Reward Gift Box */
+.daily-reward-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform var(--transition-snappy);
+}
+.daily-reward-box:hover {
+  transform: scale(1.08);
+}
+.daily-reward-btn {
+  background: linear-gradient(180deg, #A836F5 0%, #7618BC 100%);
+  color: #FFFFFF;
+  border: 1px solid #CE80FF;
+  border-radius: var(--radius-btn-pill);
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: -6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* ==========================================================================
+   MODAL DIALOGS
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 16, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 520px;
+  background: #0E132B;
+  border: 2px solid #5873FF;
+  border-radius: var(--radius-card-lg);
+  padding: 28px 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(88, 115, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: modalPop 0.25s cubic-bezier(0.17, 0.89, 0.32, 1.25);
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: #FFC400;
+  margin-bottom: 20px;
+}
+
+.modal-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.05rem;
+}
+
+.modal-close-btn {
+  margin-top: 24px;
+}
+
+/* Danger Button (e.g. Reset Stats) */
+.btn-danger {
+  background: linear-gradient(180deg, #FF4557 0%, #E81A30 60%, #A80B1C 100%);
+  color: #FFFFFF;
+  border: 2px solid #FF8090;
+  box-shadow: 0 4px 12px rgba(232, 26, 48, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-btn-pill);
+  font-family: var(--font-display);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--transition-snappy), box-shadow var(--transition-snappy);
+}
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(232, 26, 48, 0.6);
+}
+.btn-danger:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 6px rgba(232, 26, 48, 0.3);
+}
+
+/* Shop Modal Styles */
+.shop-balance-badge {
+  background: rgba(0, 200, 255, 0.12);
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  border-radius: 12px;
+  padding: 8px 18px;
+  color: #00C8FF;
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.shop-item-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 14px;
+  gap: 12px;
+}
+
+.shop-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.shop-item-name {
+  font-weight: 800;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+.shop-item-desc {
+  font-size: 0.78rem;
+  color: #8E9FC2;
+  margin-top: 2px;
+}
+
+.shop-btn-action {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-btn-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-snappy);
+}
+
+.shop-btn-unlocked {
+  background: rgba(20, 200, 52, 0.15);
+  border: 1px solid #14C834;
+  color: #14C834;
+  cursor: default;
+}
+
+.shop-btn-buy {
+  background: linear-gradient(180deg, #FFCE20 0%, #FFB000 60%, #C77800 100%);
+  border: 1px solid #FFE580;
+  color: #241400;
+  box-shadow: 0 4px 10px rgba(255, 176, 0, 0.35);
+}
+.shop-btn-buy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 176, 0, 0.5);
+}
+.shop-btn-buy:active {
+  transform: translateY(1px);
+}
+
+.shop-btn-locked {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #6C7D9E;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}

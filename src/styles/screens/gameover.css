@@ -1,0 +1,246 @@
+/* ==========================================================================
+   GAME OVER SCREEN LAYOUT (Reference: 05-game-over-screen.png)
+   ========================================================================== */
+.screen-game-over {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.gameover-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gameover-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-over-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 34, 56, 0.4);
+  margin-top: -8px;
+  position: relative;
+}
+
+.game-over-title::before,
+.game-over-title::after {
+  content: '✦';
+  color: #FF2238;
+  margin: 0 10px;
+  font-size: 0.65em;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   3 RESULT CARDS ROW
+   ========================================================================== */
+.gameover-cards-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.result-card {
+  background: rgba(14, 18, 40, 0.88);
+  border: 2px solid rgba(110, 140, 255, 0.3);
+  border-radius: var(--radius-card-md);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+.result-card-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #B5C4E8;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* Left Card: Score */
+.score-big-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
+  position: relative;
+}
+
+.score-big-val {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 7vw, 4.8rem);
+  font-weight: 800;
+  color: #FFB800;
+  text-shadow: 0 0 25px rgba(255, 184, 0, 0.7), 0 6px 0 #8C5500;
+  line-height: 1;
+}
+
+.badge-new-best {
+  background: linear-gradient(180deg, #FF2680 0%, #D80058 100%);
+  color: #FFFFFF;
+  border: 1px solid #FF80B5;
+  border-radius: var(--radius-btn-pill);
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  box-shadow: 0 4px 10px rgba(216, 0, 88, 0.4);
+}
+
+.score-alltime-best {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #FFC400;
+  margin-top: 10px;
+}
+
+/* Center Card: Summary */
+.summary-items-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  font-size: 0.95rem;
+}
+
+.summary-row-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #CCD8F5;
+  font-weight: 600;
+}
+
+.summary-row-val {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.val-green { color: #14C834; }
+.val-red { color: #FF3344; }
+.val-cyan { color: #0088FF; }
+.val-purple { color: #A23DF5; }
+.val-orange { color: #FF8533; }
+
+/* Right Card: Best Streak & Flame Mascot */
+.streak-big-val {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 800;
+  color: #FF8533;
+  text-shadow: 0 0 25px rgba(255, 133, 51, 0.8), 0 6px 0 #9E4500;
+  line-height: 1;
+}
+
+.flame-mascot-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.flame-mascot-svg {
+  width: 82px;
+  height: 82px;
+  filter: drop-shadow(0 0 14px rgba(255, 102, 0, 0.7));
+  animation: flameIdle 2s ease-in-out infinite alternate;
+}
+
+@keyframes flameIdle {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.08) translateY(-4px); }
+}
+
+/* ==========================================================================
+   GAME OVER ACTIONS ROW
+   ========================================================================== */
+.gameover-actions-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.gameover-actions-row .btn-arcade {
+  min-width: 180px;
+}
+
+/* Bottom banner */
+.gameover-bottom-banner {
+  width: 100%;
+  background: rgba(10, 14, 32, 0.8);
+  border: 1px solid rgba(110, 140, 255, 0.2);
+  border-radius: var(--radius-btn-pill);
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  color: #B5C4E8;
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.banner-left strong { color: #FFC400; }
+
+.banner-right {
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0088FF;
+}
+
+@media (max-width: 800px) {
+  .gameover-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .gameover-actions-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gameover-actions-row .btn-arcade {
+    width: 100%;
+  }
+  .gameover-bottom-banner {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}
